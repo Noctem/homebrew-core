@@ -16,6 +16,8 @@ class X265 < Formula
   depends_on "yasm" => :build
   depends_on :macos => :lion
 
+  patch :DATA
+
   def install
     # Build based off the script at ./build/linux/multilib.sh
     args = std_cmake_args + %w[
@@ -61,3 +63,24 @@ class X265 < Formula
     assert_equal header.unpack("m"), [x265_path.read(10)]
   end
 end
+
+__END__
+diff --git a/source/cmake/version.cmake b/source/cmake/version.cmake
+--- a/source/cmake/version.cmake
++++ b/source/cmake/version.cmake
+@@ -22,12 +22,11 @@ if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/..
+         set(hg_${key} ${value})
+     endforeach()
+     if(DEFINED hg_tag)
+-        set(X265_VERSION ${hg_tag})
+         set(X265_LATEST_TAG ${hg_tag})
+-        set(X265_TAG_DISTANCE "0")
+     elseif(DEFINED hg_node)
+-        string(SUBSTRING "${hg_node}" 0 16 hg_id)
+-        set(X265_VERSION "${hg_latesttag}+${hg_latesttagdistance}-${hg_id}")
++        set(X265_LATEST_TAG ${hg_latesttag})
++        set(X265_TAG_DISTANCE ${hg_latesttagdistance})
++        string(SUBSTRING "${hg_node}" 0 12 X265_REVISION_ID)
+     endif()
+ elseif(HG_EXECUTABLE AND EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../.hg)
+     if(EXISTS "${HG_EXECUTABLE}.bat")
