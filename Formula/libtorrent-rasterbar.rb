@@ -1,9 +1,9 @@
 class LibtorrentRasterbar < Formula
   desc "C++ bittorrent library by Rasterbar Software"
   homepage "https://www.libtorrent.org/"
-  url "https://github.com/arvidn/libtorrent/releases/download/libtorrent_1_1_11/libtorrent-rasterbar-1.1.11.tar.gz"
-  sha256 "7c23deba7fa279825642307587609d51c9935ac7606e0ef2f2d0ba10728b5847"
-  revision 1
+  url "https://github.com/arvidn/libtorrent/releases/download/libtorrent_1_2_0/libtorrent-rasterbar-1.2.0.tar.gz"
+  sha256 "428eefcf6a603abc0dc87e423dbd60caa00795ece07696b65f8ee8bceaa37c30"
+  head "https://github.com/arvidn/libtorrent.git"
 
   bottle do
     cellar :any
@@ -12,13 +12,8 @@ class LibtorrentRasterbar < Formula
     sha256 "fa8e3ed74f54270abcc6f46e13c70590b1ed2556fc46ebeba8e3e9e2f2c0334d" => :sierra
   end
 
-  head do
-    url "https://github.com/arvidn/libtorrent.git"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "cmake" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "boost-python3"
@@ -28,26 +23,13 @@ class LibtorrentRasterbar < Formula
   def install
     ENV.cxx11
 
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --prefix=#{prefix}
-      --enable-encryption
-      --enable-python-binding
-      --with-boost=#{Formula["boost"].opt_prefix}
-      --with-boost-python=boost_python37-mt
-      PYTHON=python3
-    ]
-
-    if build.head?
-      system "./bootstrap.sh", *args
-    else
-      system "./configure", *args
-    end
-
-    system "make", "install"
-    libexec.install "examples"
+    system "cmake", ".",
+                    "-DCMAKE_CXX_STANDARD=11",
+                    "-Dpython-bindings=ON",
+                    "-DPYTHON_EXECUTABLE=#{Formula["python"].bin/"python3"}",
+                    "-G", "Ninja",
+                    *std_cmake_args
+    system "ninja", "install"
   end
 
   test do
