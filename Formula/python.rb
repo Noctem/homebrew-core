@@ -1,9 +1,8 @@
 class Python < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz"
-  sha256 "fb799134b868199930b75f26678f18932214042639cd52b16da7fd134cd9b13f"
-  revision 1
+  url "https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tar.xz"
+  sha256 "b356244e13fb5491da890b35b13b2118c3122977c2cd825e3eb6e7d462030d84"
   head "https://github.com/python/cpython.git"
 
   bottle do
@@ -31,8 +30,8 @@ class Python < Formula
   depends_on "sqlite"
   depends_on "xz"
 
-  skip_clean "bin/pip3", "bin/pip-3.4", "bin/pip-3.5", "bin/pip-3.6", "bin/pip-3.7"
-  skip_clean "bin/easy_install3", "bin/easy_install-3.4", "bin/easy_install-3.5", "bin/easy_install-3.6", "bin/easy_install-3.7"
+  skip_clean "bin/pip3", "bin/pip-3.4", "bin/pip-3.5", "bin/pip-3.6", "bin/pip-3.7", "bin/pip-3.8"
+  skip_clean "bin/easy_install3", "bin/easy_install-3.4", "bin/easy_install-3.5", "bin/easy_install-3.6", "bin/easy_install-3.7", "bin/easy_install-3.8"
 
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/f4/d5/a6c19dcbcbc267aca376558797f036d9bcdff344c9f785fe7d0fe9a5f2a7/setuptools-41.4.0.zip"
@@ -40,8 +39,8 @@ class Python < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/00/9e/4c83a0950d8bdec0b4ca72afd2f9cea92d08eb7c1a768363f2ea458d08b4/pip-19.2.3.tar.gz"
-    sha256 "e7a31f147974362e6c82d84b91c7f2bdf57e4d3163d3d454e6c3e71944d67135"
+    url "https://files.pythonhosted.org/packages/af/7a/5dd1e6efc894613c432ce86f1011fcc3bbd8ac07dfeae6393b7b97f1de8b/pip-19.3.tar.gz"
+    sha256 "324d234b8f6124846b4e390df255cacbe09ce22791c3b714aa1ea6e44a4f2861"
   end
 
   resource "wheel" do
@@ -92,12 +91,12 @@ class Python < Formula
     # We want our readline! This is just to outsmart the detection code,
     # superenv makes cc always find includes/libs!
     inreplace "setup.py",
-      "do_readline = self.compiler.find_library_file(lib_dirs, 'readline')",
+      "do_readline = self.compiler.find_library_file(self.lib_dirs, 'readline')",
       "do_readline = '#{Formula["readline"].opt_lib}/libhistory.dylib'"
 
     inreplace "setup.py" do |s|
       s.gsub! "sqlite_setup_debug = False", "sqlite_setup_debug = True"
-      s.gsub! "for d_ in inc_dirs + sqlite_inc_paths:",
+      s.gsub! "for d_ in self.inc_dirs + sqlite_inc_paths:",
               "for d_ in ['#{Formula["sqlite"].opt_include}']:"
     end
 
@@ -288,7 +287,7 @@ class Python < Formula
     if prefix.exist?
       xy = (prefix/"Frameworks/Python.framework/Versions").children.min.basename.to_s
     else
-      xy = version.to_s.slice(/(3\.\d)/) || "3.7"
+      xy = version.to_s.slice(/(3\.\d)/) || "3.8"
     end
     <<~EOS
       Python has been installed as
