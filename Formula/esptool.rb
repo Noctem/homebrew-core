@@ -5,6 +5,7 @@ class Esptool < Formula
   homepage "https://github.com/espressif/esptool"
   url "https://github.com/espressif/esptool/archive/v2.7.tar.gz"
   sha256 "9d3c9f6bc1e2a619c207ef33920aa0c8251584489f68a777dbc381e19f9679fb"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
