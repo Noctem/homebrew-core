@@ -5,6 +5,7 @@ class Snapcraft < Formula
   homepage "https://snapcraft.io/"
   url "https://github.com/snapcore/snapcraft/archive/3.8.tar.gz"
   sha256 "0430418d771caff48cd740e1317467cd00e846e04eb62651ae985a147a37b4ec"
+  revision 1
 
   bottle do
     cellar :any
