@@ -3,6 +3,7 @@ class Clingo < Formula
   homepage "https://potassco.org/"
   url "https://github.com/potassco/clingo/archive/v5.4.0.tar.gz"
   sha256 "e2de331ee0a6d254193aab5995338a621372517adcf91568092be8ac511c18f3"
+  revision 1
 
   bottle do
     sha256 "768f983bdeb5b7ec3c2aa69b4df169d67df7ec9b0b3f666da4c0be2df84d106a" => :catalina
