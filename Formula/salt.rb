@@ -5,6 +5,7 @@ class Salt < Formula
   homepage "https://s.saltstack.com/community/"
   url "https://files.pythonhosted.org/packages/b7/f2/d285dd83d76be1d80bc9851b309ad9d88a60de1822f80c58d92355208525/salt-2019.2.1.tar.gz"
   sha256 "c8fa8318a8e87f788970b83f841bb52f1e873a697e2db9691e284ce248aa930a"
+  revision 1
   head "https://github.com/saltstack/salt.git", :branch => "develop", :shallow => false
 
   bottle do
