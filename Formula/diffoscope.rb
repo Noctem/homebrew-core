@@ -3,6 +3,7 @@ class Diffoscope < Formula
   homepage "https://diffoscope.org"
   url "https://files.pythonhosted.org/packages/85/65/7da00c31920f33d9e33d83a360f9bc03e7565271c7cca2b9f21d957610f1/diffoscope-123.tar.gz"
   sha256 "d05b76ebd89dac55cf29dfc3c1f6192f9bb0e27b119cf3db8b6d56402fd41043"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
