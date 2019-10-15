@@ -5,6 +5,7 @@ class Platformio < Formula
   homepage "https://platformio.org/"
   url "https://files.pythonhosted.org/packages/5d/59/2ba54e3f2ae8435997acbd0d0ff31993a7041a8b11515e0b5cc846a71ca4/platformio-4.0.3.tar.gz"
   sha256 "0b19569d18d4098880b651c06dbf2ef23411a3d6c3da36a2b5950fe871523b50"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
