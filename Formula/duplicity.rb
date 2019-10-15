@@ -6,7 +6,7 @@ class Duplicity < Formula
   url "https://launchpad.net/duplicity/0.8-series/0.8.05/+download/duplicity-0.8.05.tar.gz"
   sha256 "064672cf492003ff05f2d7ca8493d12af86de06aa1c60d77ac8dd74b2da3111d"
 
-  revision 1
+  revision 2
 
   bottle do
     cellar :any
