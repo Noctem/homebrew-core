@@ -4,7 +4,7 @@ class Libxml2 < Formula
   url "http://xmlsoft.org/sources/libxml2-2.9.9.tar.gz"
   mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/libxml2/libxml2-2.9.9.tar.gz"
   sha256 "94fb70890143e3c6549f265cee93ec064c80a84c42ad0f23e85ee1fd6540a871"
-  revision 2
+  revision 3
 
   bottle do
     cellar :any
