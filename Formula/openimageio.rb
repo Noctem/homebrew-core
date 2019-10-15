@@ -3,6 +3,7 @@ class Openimageio < Formula
   homepage "https://openimageio.org/"
   url "https://github.com/OpenImageIO/oiio/archive/Release-2.0.11.tar.gz"
   sha256 "3f6f872e93d5a99aa5d0ccf97a9b74ce4e6d5a33aa26b0587771cc15a3bd8d19"
+  revision 1
   head "https://github.com/OpenImageIO/oiio.git"
 
   bottle do
