@@ -6,6 +6,7 @@ class AzureCli < Formula
   url "https://codeload.github.com/Azure/azure-cli/legacy.tar.gz/6c14816c7d975795bc799e3df4620db8b6220187"
   version "2.0.75"
   sha256 "ffbf02f481b2e6e09861ebf2ea2283dd8cb2acfe628f0dc98a1807d040c5d04d"
+  revision 1
   head "https://github.com/Azure/azure-cli.git"
 
   bottle do
