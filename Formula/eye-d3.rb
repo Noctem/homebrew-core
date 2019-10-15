@@ -3,6 +3,7 @@ class EyeD3 < Formula
   homepage "http://eyed3.nicfit.net/"
   url "http://eyed3.nicfit.net/releases/eyeD3-0.8.10.tar.gz"
   sha256 "ecd1a3df14c511a2ebaf09b4f04c29e468d65016814767d95daf7f26831562c9"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
