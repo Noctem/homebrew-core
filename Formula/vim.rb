@@ -4,6 +4,7 @@ class Vim < Formula
   # vim should only be updated every 50 releases on multiples of 50
   url "https://github.com/vim/vim/archive/v8.1.2150.tar.gz"
   sha256 "0ab3a2656f3f2a4e9b9834ce2c119aaa6c895847f7df779f3aeaa3e87f974b75"
+  revision 1
   head "https://github.com/vim/vim.git"
 
   bottle do
