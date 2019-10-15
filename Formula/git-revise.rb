@@ -5,6 +5,7 @@ class GitRevise < Formula
   homepage "https://github.com/mystor/git-revise"
   url "https://github.com/mystor/git-revise/archive/0.5.0.tar.gz"
   sha256 "f2bd6ad51b2acdd6fb6acf51807ce4b951d92cd039fc9e5a7dbb1e182fdf38b4"
+  revision 1
   head "https://github.com/mystor/git-revise.git"
 
   bottle do
