@@ -5,7 +5,7 @@ class Fabric < Formula
   homepage "https://www.fabfile.org/"
   url "https://github.com/fabric/fabric/archive/2.5.0.tar.gz"
   sha256 "4b3f4c79bcc372de575e7756b50c89373ce1acb8565902a5e406b5e78c41389c"
-  revision 1
+  revision 2
   head "https://github.com/fabric/fabric.git"
 
   bottle do
