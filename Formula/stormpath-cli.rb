@@ -5,7 +5,7 @@ class StormpathCli < Formula
   homepage "https://github.com/stormpath/stormpath-cli"
   url "https://github.com/stormpath/stormpath-cli/archive/0.1.3.tar.gz"
   sha256 "e6ec75f781bc85ed7648c9df60c40d863f4cc2b091a90db6e63b36549fd25dba"
-  revision 1
+  revision 2
   head "https://github.com/stormpath/stormpath-cli.git"
 
   bottle do
