@@ -3,6 +3,7 @@ class Py3cairo < Formula
   homepage "https://cairographics.org/pycairo/"
   url "https://github.com/pygobject/pycairo/releases/download/v1.18.1/pycairo-1.18.1.tar.gz"
   sha256 "70172e58b6bad7572a3518c26729b074acdde15e6fee6cbab6d3528ad552b786"
+  revision 1
 
   bottle do
     cellar :any
