@@ -5,6 +5,7 @@ class Cheat < Formula
   homepage "https://github.com/chrisallenlane/cheat"
   url "https://github.com/chrisallenlane/cheat/archive/2.3.1.tar.gz"
   sha256 "f944612b1d1b97dbe87c6cc3c68932df983482f53a09b0446c318ee7399c865c"
+  revision 1
   head "https://github.com/chrisallenlane/cheat.git"
 
   bottle do
