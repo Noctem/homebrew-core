@@ -3,6 +3,7 @@ class Xapian < Formula
   homepage "https://xapian.org/"
   url "https://oligarchy.co.uk/xapian/1.4.12/xapian-core-1.4.12.tar.xz"
   sha256 "4f8a36da831712db41d38a039fefb5251869761a58be28ba802994bb930fac7c"
+  revision 1
   version_scheme 1
 
   bottle do
@@ -31,10 +32,11 @@ class Xapian < Formula
 
     resource("bindings").stage do
       ENV["XAPIAN_CONFIG"] = bin/"xapian-config"
-      ENV.prepend_create_path "PYTHON3_LIB", lib/"python3.7/site-packages"
+      xy = Language::Python.major_minor_version "python3"
+      ENV.prepend_create_path "PYTHON3_LIB", lib/"python#{xy}/site-packages"
 
-      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"lib/python3.7/site-packages"
-      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"vendor/lib/python3.7/site-packages"
+      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"lib/python#{xy}/site-packages"
+      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"vendor/lib/python#{xy}/site-packages"
 
       system "./configure", "--disable-dependency-tracking",
                             "--prefix=#{prefix}",
@@ -46,6 +48,6 @@ class Xapian < Formula
 
   test do
     system bin/"xapian-config", "--libs"
-    system "python3.7 -c 'import xapian'"
+    system "python3 -c 'import xapian'"
   end
 end
