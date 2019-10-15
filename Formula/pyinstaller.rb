@@ -5,6 +5,7 @@ class Pyinstaller < Formula
   homepage "https://www.pyinstaller.org"
   url "https://files.pythonhosted.org/packages/e2/c9/0b44b2ea87ba36395483a672fddd07e6a9cb2b8d3c4a28d7ae76c7e7e1e5/PyInstaller-3.5.tar.gz"
   sha256 "ee7504022d1332a3324250faf2135ea56ac71fdb6309cff8cd235de26b1d0a96"
+  revision 1
 
   head "https://github.com/pyinstaller/pyinstaller.git", :branch => "develop"
 
