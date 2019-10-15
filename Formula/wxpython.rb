@@ -5,6 +5,7 @@ class Wxpython < Formula
   homepage "https://www.wxwidgets.org/"
   url "https://files.pythonhosted.org/packages/9a/a1/9c081e04798eb134b63def3db121a6e4436e1d84e76692503deef8e75423/wxPython-4.0.6.tar.gz"
   sha256 "35cc8ae9dd5246e2c9861bb796026bbcb9fb083e4d49650f776622171ecdab37"
+  revision 1
 
   bottle do
     cellar :any
