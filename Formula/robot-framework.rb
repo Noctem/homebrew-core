@@ -5,7 +5,7 @@ class RobotFramework < Formula
   homepage "https://robotframework.org/"
   url "https://github.com/robotframework/robotframework/archive/v3.1.2.tar.gz"
   sha256 "1a8769bc40d334814b3eeb1dc945624c292f210fb4f2ff033a21cba4e9360864"
-  revision 1
+  revision 2
   head "https://github.com/robotframework/robotframework.git"
 
   bottle do
