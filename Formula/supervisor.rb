@@ -5,6 +5,7 @@ class Supervisor < Formula
   homepage "http://supervisord.org/"
   url "https://github.com/Supervisor/supervisor/archive/4.0.4.tar.gz"
   sha256 "5087a99c008c8b4ca26c27a360cbcef03430589b8f60912715179ef19e16fa18"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
