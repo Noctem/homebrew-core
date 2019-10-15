@@ -5,6 +5,7 @@ class Black < Formula
   homepage "https://black.readthedocs.io/en/stable/"
   url "https://files.pythonhosted.org/packages/89/07/aebb10fb8f2ffbac672dfbebffa724643bc84cf012a57737a622d1dabddb/black-19.3b0.tar.gz"
   sha256 "68950ffd4d9169716bcb8719a56c07a2f4485354fec061cdd5910aa07369731c"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
