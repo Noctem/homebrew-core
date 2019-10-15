@@ -3,6 +3,7 @@ class YleDl < Formula
   homepage "https://aajanki.github.io/yle-dl/index-en.html"
   url "https://github.com/aajanki/yle-dl/archive/20190614.tar.gz"
   sha256 "fe6a4286a4c10b7f40916315b77ebaf1b61c167385a6c9755aa45478827ba056"
+  revision 1
   head "https://github.com/aajanki/yle-dl.git"
 
   bottle do
