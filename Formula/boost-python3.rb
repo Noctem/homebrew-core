@@ -49,7 +49,7 @@ class BoostPython3 < Formula
       using darwin : : #{ENV.cxx} ;
       using python : #{pyver}
                    : python3
-                   : #{py_prefix}/include/python#{pyver}m
+                   : #{py_prefix}/include/python#{pyver}
                    : #{py_prefix}/lib ;
     EOS
 
